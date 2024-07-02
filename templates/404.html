@@ -1,0 +1,8 @@
+{% extends 'home.html' %}
+{% block title %}<title>Not Found</title>{% endblock %}
+{% block content %}
+<div class="mt-[50px] ml-[20%] text-[#313131] ">
+    <img class="w-[3500px]" src="{{ url_for('static', path='404.png') }}" >
+    <p class="text-center text-[15px] text-[#737373BD] mt-[-55px] ml-[50px]">The page could not be found(<br>Please make sure that you were looking for the right page</p>
+</div>
+{% endblock %}

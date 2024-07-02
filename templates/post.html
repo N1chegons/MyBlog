@@ -1,0 +1,57 @@
+{% extends 'home.html' %}
+{% block title %}<title>Posts</title>{% endblock %}
+{% block content %}
+    <div class="mt-[50px] ml-[150px] text-[#313131]">
+        <div class="flex">
+            <img class="ml-[-8px] size-[120px]" src="{{ url_for('static', path='Todo.png') }}">
+            <h1 class="ml-[20px] mt-[-20px] text-[100px]">Posts</h1>
+        </div>
+        {% if page > 1 %}
+        <div class="top-[21%] absolute">
+             <p class="text-[#737373BD] ml-[12px] ">Previous post</p>
+        </div>
+        {% endif %}
+            {% for i in post %}
+            <div class=" justify-between ml-[10px] w-[700px] mt-[20px]">
+                <div>
+                    <div class="border-b-[1px] flex justify-between pb-[8px]">
+                        <h2 class="text-[25px] mt-[40px]">{{ i.title }}</h2>
+                        <div class="flex">
+                            <p class="text-[14px] mt-[57px] text-[#CBCBCB]">from Me</p>
+                            <img class="size-20 rounded-full" src="{{ url_for('static', path='MailLogo.jpg') }}">
+                        </div>
+                    </div>
+                    <div class="mt-[20px] w-[650px] pb-[20px]">
+                        <p class="text-[18px]">{{ i.description }}</p>
+                    </div>
+                    <div class="border-t-[1px] justify-between flex pt-[10px]">
+                        <p class="text-[#737373BD] text-[15px] mt-[-4.50px]">Bogdan Ivanovic</p>
+                        <div class="mr-[20px]">
+                            <p class="text-[#737373BD] text-[13px]">{{ i.data }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="flex mt-[40px] ml-[12px]">
+                {% if page >= 1 and page <= total-1 %}
+                <div>
+                    <a class="transition duration-500 ease-in-out  hover:bg-[#CF404D] hover:text-[#fff] rounded-[3px]
+                     pl-[10px] py-[5px] pr-[20px] text-[20px]" href="{{url}}">next</a>
+                </div>
+                {% endif %}
+                {% if page > 1 %}
+                <div>
+                    <a class="transition duration-500 ease-in-out  hover:bg-[#2D3E4F] hover:text-[#fff] rounded-[3px]
+                     pl-[10px] py-[5px] pr-[20px] text-[20px]" href="{{ url_for('post_get_page') }}">back</a>
+                </div>
+                {% endif %}
+            </div>
+            {% if total - skip == 0%}
+                <div class="mt-[50px] ml-[30%]">
+                    <p class="text-[#737373BD]">At the moment, the posts are over</p>
+                </div>
+            {% endif %}
+    </div>
+
+{% endblock %}

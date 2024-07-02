@@ -1,0 +1,37 @@
+{% extends 'home.html' %}
+{% block title %}<title>About me</title>{% endblock %}
+{% block content %}
+<div class="mt-[50px] ml-[150px] text-[#313131]">
+    <div class="">
+        <div class="flex">
+            <img class="size-28" src="{{ url_for('static', path='AboutMe.png') }}">
+            <h1 class="ml-[20px] mt-[-20px] text-[100px]">About me</h1>
+        </div>
+
+        <p class="ml-[20px] pt-[5px] text-[#737373BD] text-[18px]">About Me</p>
+        <p class="ml-[20px] text-[23px]">Bogdan, I'm 14 years old, and<br>
+            I've been interested in programming since I was 11 years old.<br>
+            <span class="pt-[20px] text-[#737373BD] text-[18px]">Now</span><br>
+            I took my first steps in <span class="text-green-500">Python</span>, trying to write some simple logic.<br>
+            Then I studied <span class="text-yellow-500">HTML</span> and <span class="text-blue-500">CSS</span>, making the first test sites on them.<br>
+            I've captured <span class="text-amber-800">JavaScript</span> a little bit, but I haven't delved into it.<br>
+            After a couple of years of studying,
+            I saw the <span class="text-green-500">Django/DjangoREST</span> framework,<br> I really liked django for its simplicity and logic,
+            I did projects on it, trained user<br>registration and authorization through <span class="text-orange-200">cookies</span> and <span class="text-yellow-200">JWT</span>.<br>
+            <span class="pt-[20px] text-[#737373BD] text-[18px]">My first steps</span><br>
+            Now I'm learning the <span class="text-green-500">FastAPI</span> framework, I used to have attempts to learn fastapi, but somehow <br>
+            I didn't want to learn it, now I want to learn something new in order to develop in all directions!
+        </p>
+    </div>
+    <h2 class="pt-[50px]">My Stack:</h2>
+    <div class="ml-[-150px] mt-[20px] text-[#313131] text-[20px] border-b-4  pb-[20px] w-[1532px]">
+        <div class="flex">
+            <img class="size-[200px] ml-[100px] rounded-full" src="{{ url_for('static', path='PYTHON.png') }}">
+            <img class="size-[200px] ml-[150px] rounded-full" src="{{ url_for('static', path='DJANGO.png') }}">
+            <img class="size-[200px] ml-[150px] rounded-full" src="{{ url_for('static', path='HTMLCSS.png') }}">
+            <img class="size-[200px] ml-[50px] rounded-full" src="{{ url_for('static', path='FASTAPI.png') }}">
+            <img class="size-[200px] ml-[50px] rounded-full" src="{{ url_for('static', path='javascript.png') }}">
+        </div>
+    </div>
+</div>
+{% endblock %}

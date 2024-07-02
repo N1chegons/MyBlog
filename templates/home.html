@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block title %}<title>Home</title>{% endblock %}
+</head>
+<body style="font-family: 'Oswald', sans-serif;">
+    <div class="container">
+        <div class="flex">
+            <div class="text-center bg-[#2D3E4F] pt-56 w-96 h-screen">
+                <img class="size-40 rounded-full ml-auto mr-auto mb-[30px]" src="{{ url_for('static', path='MailLogo.jpg') }}">
+                <div class="">
+                    <h1 class="text-4xl text-[#CF404D] underline underline-offset-[10px] ">My Blog</h1>
+                    <p class="text-sm pt-2 text-[#000000BD]">Bogdan Ivanovic</p>
+                </div>
+                <div class="flex flex-col w-96">
+                    <a href="{{ url_for('get_home_page') }}" class="text-lg text-[#FFFFFF] hover:text-[#CF404D] pt-[20px] pb-[20px]">Home</a>
+                    <a href="{{ url_for('about_get_page') }}" class="text-lg text-[#FFFFFF] hover:text-[#CF404D] pb-[20px]">About me</a>
+                    <a href="{{ url_for('portfolio_get_page') }}" class="text-lg text-[#FFFFFF] hover:text-[#CF404D] pb-[20px]">Portfolio</a>
+                    <a href="{{ url_for('contact_get_page') }}" class="text-lg text-[#FFFFFF] hover:text-[#CF404D] pb-[20px]">Contact</a>
+                    <a href="{{ url_for('post_get_page') }}" class="text-lg text-[#FFFFFF] hover:text-[#CF404D] ">Post</a>
+                </div>
+            </div>
+            {% block content %}
+            <div class="ml-auto mt-[5%]">
+                <div class="text-center pb-[70px]">
+                    <p class="text-[#737373BD]">Navigation</p>
+                    <h1 class="text-[#313131] text-6xl">What can you watch?</h1>
+                </div>
+                <div class="flex">
+<!--                    1-->
+                    <div class="w-60 pl-[80px]">
+                        <img class="ml-[-15px] w-[100px] " src="{{ url_for('static', path='AboutMe.png') }}">
+                        <h2 class="text-[#313131] text-2xl pt-[20px]">About Me</h2>
+                        <p class="text-[#000000BD]">Here you can learn something new about me</p>
+                        <a class="text-[#CF404D] text-sm" href="{{ url_for('about_get_page') }}">About Me</a>
+                    </div>
+<!--                    2-->
+                    <div class="w-60 pl-[80px]">
+                        <img class="ml-[-15px] w-[100px]" src="{{ url_for('static', path='Portfolio.png') }}">
+                        <h2 class="text-[#313131] text-2xl pt-[20px]">Portfolio</h2>
+                        <p class="text-[#000000BD]">You can see my projects<br> here</p>
+                        <a class="text-[#CF404D] text-sm" href="{{ url_for('portfolio_get_page') }}">Portfolio</a>
+                    </div>
+<!--                    3-->
+                    <div class="w-60 pl-[80px]">
+                        <img class="ml-[-15px] w-[100px]" src="{{ url_for('static', path='email.png') }}">
+                        <h2 class="text-[#313131] text-2xl pt-[20px]">Contact</h2>
+                        <p class="text-[#000000BD]">Here is information about how you can contact me</p>
+                        <a class="text-[#CF404D] text-sm" href="{{ url_for('contact_get_page') }}">Contact</a>
+                    </div>
+<!--                    4-->
+                    <div class="w-60 pl-[80px]">
+                        <img class="ml-[-15px] w-[100px]" src="{{ url_for('static', path='Todo.png') }}">
+                        <h2 class="text-[#313131] text-2xl pt-[20px]">Post</h2>
+                        <p class="text-[#000000BD]">Here I post various posts about my life, and other </p>
+                        <a class="text-[#CF404D] text-sm" href="{{ url_for('post_get_page') }}">Post</a>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

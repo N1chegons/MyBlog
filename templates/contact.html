@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+{% block title %}<title>My Contact</title>{% endblock %}
+{% block content %}
+<div class="mt-[50px] ml-[150px] text-[#313131]">
+    <div class="">
+        <div class="flex">
+            <img class="size-28 ml-[10px]" src="{{ url_for('static', path='email.png') }}">
+            <h1 class="ml-[20px] mt-[-20px] text-[100px]">My Contact</h1>
+        </div>
+        <div class="ml-[25px]">
+            <p class="text-[#CBCBCB] pb-[10px]">Tel</p>
+            <p class="text-[25px] pb-[20px]">+79174801403</p>
+            <p class="text-[#CBCBCB] pb-[10px]">Mail</p>
+            <p class="text-[25px] pb-[20px]">krikignatenko@gmail.com</p>
+            <p class="text-[#CBCBCB] pb-[10px]">Telegram User</p>
+            <p class="text-[25px] pb-[20px]">@Nichegons</p>
+            <p class="text-[#CBCBCB] pb-[5px]">Vk</p>
+            <a class="text-[25px] pb-[20px] hover:text-[#CF404D]" href="https://vk.com/nichegons" target="_blank">VK</a>
+        </div>
+        <div class="ml-[25px] pt-[10px]">
+            <p class="text-[#CBCBCB] pb-[20px] ">City</p>
+            <img class="w-[100%] h-[380px] rounded-[20px]" src="{{ url_for('static', path='gps.png') }} ">
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+{% block title %}<title>Portfolio</title>{% endblock %}
+{% block content %}
+<div class="mt-[50px] ml-[150px] text-[#313131]">
+    <div class="flex">
+        <img class="ml-[-8px] size-[120px]" src="{{ url_for('static', path='Portfolio.png') }}">
+        <h1 class="ml-[20px] mt-[-20px] text-[100px]">My Portfolio</h1>
+    </div>
+    <div class="pt-[15px]">
+        <h3 class="pb-[30px] text-[#CBCBCB]">A little background</h3>
+        <p class="text-[25px]">My portfolio is being actively updated,<br>
+            this project will also be added to my portfolio)<br>
+            Here are my initial practices in HTML<br> And CSS
+            I haven't figured out how to implement this page yet,
+            so for now I'll just attach a link to my <a class="text-[#CF404D]" href="https://github.com/N1chegons" target="_blank">GitHub</a>
+        </p>
+    </div>
+    <div class="pt-[30px]">
+        <p class="pb-[30px] text-[#CBCBCB]">My page GitHub</p>
+        <img class="rounded-[15px] h-[460px] w-[1800px]" src="{{ url_for('static', path='GitHub.png') }}">
+    </div>
+</div>
+{% endblock %}
